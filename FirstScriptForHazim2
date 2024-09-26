@@ -219,6 +219,30 @@ end)
 
 
 
+local Fly = Instance.new("TextButton")
+Fly.Name = "Fly"
+Fly.TextWrapped = true
+Fly.BorderSizePixel = 0
+Fly.TextScaled = true
+Fly.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+Fly.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Fly.TextSize = 14
+Fly.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+Fly.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+Fly.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+Fly.Text = "Fly"
+Fly.Position = UDim2.new(0.12, 0.00, 0.53, 0.00)
+Fly.Parent = Frame
+Fly.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet('https://pastebin.com/raw/YSL3xKYU'))()
+end)
+
+
+
+
+
+
+
 
 local UIS = game:GetService('UserInputService')
 local frame = Frame
