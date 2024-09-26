@@ -1,5 +1,6 @@
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+ScreenGui.ResetOnSpawn = false
 
 local Frame = Instance.new("Frame")
 Frame.Visible = false
@@ -26,7 +27,7 @@ Reset.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
 Reset.TextColor3 = Color3.new(0.00, 0.00, 0.00)
 Reset.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
 Reset.Text = "Reset"
-Reset.Position = UDim2.new(0.09, 0.00, 0.06, 0.00)
+Reset.Position = UDim2.new(0.54, 0.00, 0.28, 0.00)
 Reset.Parent = Frame
 Reset.MouseButton1Click:Connect(function()
 	game.Players.LocalPlayer.Character.Humanoid.Health = 0
@@ -100,6 +101,92 @@ end)
 
 
 
+local JumpBoost = Instance.new("TextButton")
+JumpBoost.Name = "JumpBoost"
+JumpBoost.TextWrapped = true
+JumpBoost.BorderSizePixel = 0
+JumpBoost.TextScaled = true
+JumpBoost.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+JumpBoost.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+JumpBoost.TextSize = 14
+JumpBoost.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+JumpBoost.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+JumpBoost.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+JumpBoost.Text = "JumpBoost"
+JumpBoost.Position = UDim2.new(0.12, 0.00, 0.06, 0.00)
+JumpBoost.Parent = Frame
+
+local TextBox_1 = Instance.new("TextBox")
+TextBox_1.TextWrapped = true
+TextBox_1.BorderSizePixel = 0
+TextBox_1.TextScaled = true
+TextBox_1.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
+TextBox_1.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TextBox_1.TextSize = 14
+TextBox_1.Size = UDim2.new(1.00, 0.00, 0.89, 0.00)
+TextBox_1.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+TextBox_1.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+TextBox_1.Text = ""
+TextBox_1.Position = UDim2.new(-0.00, 0.00, 1.17, 0.00)
+TextBox_1.Parent = JumpBoost
+TextBox_1.PlaceholderText = "Enter your desired jump height here"
+JumpBoost.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.JumpHeight = TextBox_1.Text
+end)
+
+
+
+
+
+
+local Sit = Instance.new("TextButton")
+Sit.Name = "Sit"
+Sit.TextWrapped = true
+Sit.BorderSizePixel = 0
+Sit.TextScaled = true
+Sit.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+Sit.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Sit.TextSize = 14
+Sit.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+Sit.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+Sit.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+Sit.Text = "Sit"
+Sit.Position = UDim2.new(0.12, 0.00, 0.41, 0.00)
+Sit.Parent = Frame
+Sit.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.Sit = true
+end)
+
+
+
+
+
+
+local GodMode = Instance.new("TextButton")
+GodMode.Name = "GodMode"
+GodMode.TextWrapped = true
+GodMode.BorderSizePixel = 0
+GodMode.TextScaled = true
+GodMode.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+GodMode.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+GodMode.TextSize = 14
+GodMode.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+GodMode.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+GodMode.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+GodMode.Text = "GodMode(only work in some games)"
+GodMode.Position = UDim2.new(0.54, 0.00, 0.41, 0.00)
+GodMode.Parent = Frame
+GodMode.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/ignore-touchinterests/main/main",true))()
+end)
+
+
+
+
+
+
+
+
 
 FBDB = false
 local SGA = nil
@@ -115,7 +202,7 @@ FullBright.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
 FullBright.TextColor3 = Color3.new(0.00, 0.00, 0.00)
 FullBright.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
 FullBright.Text = "Full Bright"
-FullBright.Position = UDim2.new(0.09, 0.00, 0.16, 0.00)
+FullBright.Position = UDim2.new(0.12, 0.00, 0.28, 0.00)
 FullBright.Parent = Frame
 FullBright.MouseButton1Click:Connect(function()
 	if FBDB == false then
@@ -206,3 +293,4 @@ UIS.InputChanged:Connect(function(input)
 		end
 	end
 end)
+
