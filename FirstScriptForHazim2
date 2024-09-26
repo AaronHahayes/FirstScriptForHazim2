@@ -1,0 +1,208 @@
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+
+local Frame = Instance.new("Frame")
+Frame.Visible = false
+Frame.Size = UDim2.new(0.50, 0.00, 0.86, 0.00)
+Frame.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+Frame.Position = UDim2.new(0.25, 0.00, 0.07, 0.00)
+Frame.BorderSizePixel = 0
+Frame.BackgroundColor3 = Color3.new(0.60, 0.60, 0.60)
+Frame.Parent = ScreenGui
+
+
+
+
+
+local Reset = Instance.new("TextButton")
+Reset.Name = "Reset"
+Reset.TextWrapped = true
+Reset.BorderSizePixel = 0
+Reset.TextScaled = true
+Reset.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+Reset.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Reset.TextSize = 14
+Reset.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+Reset.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+Reset.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+Reset.Text = "Reset"
+Reset.Position = UDim2.new(0.09, 0.00, 0.06, 0.00)
+Reset.Parent = Frame
+Reset.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+
+
+
+TUI = false
+local ToggleUI = Instance.new("TextButton")
+ToggleUI.Name = "ToggleUI"
+ToggleUI.TextWrapped = true
+ToggleUI.BorderSizePixel = 0
+ToggleUI.TextScaled = true
+ToggleUI.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+ToggleUI.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+ToggleUI.TextSize = 14
+ToggleUI.Size = UDim2.new(0.14, 0.00, 0.10, 0.00)
+ToggleUI.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+ToggleUI.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+ToggleUI.Text = "ToggleUI"
+ToggleUI.Position = UDim2.new(0.03, 0.00, 0.06, 0.00)
+ToggleUI.Parent = ScreenGui
+ToggleUI.MouseButton1Click:Connect(function()
+	if TUI == false then
+		TUI = true
+		Frame.Visible = true
+	else
+		TUI = false
+		Frame.Visible = false
+	end
+end)
+
+
+
+
+
+local SpeedBoost = Instance.new("TextButton")
+SpeedBoost.Name = "SpeedBoost"
+SpeedBoost.TextWrapped = true
+SpeedBoost.BorderSizePixel = 0
+SpeedBoost.TextScaled = true
+SpeedBoost.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+SpeedBoost.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+SpeedBoost.TextSize = 14
+SpeedBoost.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+SpeedBoost.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+SpeedBoost.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+SpeedBoost.Text = "Speed Boost"
+SpeedBoost.Position = UDim2.new(0.55, 0.00, 0.06, 0.00)
+SpeedBoost.Parent = Frame
+
+local TextBox = Instance.new("TextBox")
+TextBox.TextWrapped = true
+TextBox.BorderSizePixel = 0
+TextBox.TextScaled = true
+TextBox.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
+TextBox.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TextBox.TextSize = 14
+TextBox.Size = UDim2.new(1.00, 0.00, 0.89, 0.00)
+TextBox.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+TextBox.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+TextBox.Text = ""
+TextBox.Position = UDim2.new(-0.01, 0.00, 1.17, 0.00)
+TextBox.Parent = SpeedBoost
+TextBox.PlaceholderText = "Enter your desired walk speed here"
+SpeedBoost.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = TextBox.Text
+end)
+
+
+
+
+
+FBDB = false
+local SGA = nil
+local FullBright = Instance.new("TextButton")
+FullBright.Name = "FullBright"
+FullBright.TextWrapped = true
+FullBright.BorderSizePixel = 0
+FullBright.TextScaled = true
+FullBright.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+FullBright.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+FullBright.TextSize = 14
+FullBright.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+FullBright.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+FullBright.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+FullBright.Text = "Full Bright"
+FullBright.Position = UDim2.new(0.09, 0.00, 0.16, 0.00)
+FullBright.Parent = Frame
+FullBright.MouseButton1Click:Connect(function()
+	if FBDB == false then
+		FBDB = true
+		SGA = game.Lighting.Ambient
+		game.Lighting.Ambient = Color3.new(1, 1, 1)
+	else
+		FBDB = false
+		game.Lighting.Ambient = SGA
+	end
+end)
+
+
+
+
+
+
+local UIS = game:GetService('UserInputService')
+local frame = Frame
+local dragToggle = nil
+local dragSpeed = 0.25
+local dragStart = nil
+local startPos = nil
+
+local function updateInput(input)
+	local delta = input.Position - dragStart
+	local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+		startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+end
+
+frame.InputBegan:Connect(function(input)
+	if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+		dragToggle = true
+		dragStart = input.Position
+		startPos = frame.Position
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragToggle = false
+			end
+		end)
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+		if dragToggle then
+			updateInput(input)
+		end
+	end
+end)
+
+
+
+
+
+local UIS = game:GetService('UserInputService')
+local frame = ToggleUI
+local dragToggle = nil
+local dragSpeed = 0.25
+local dragStart = nil
+local startPos = nil
+
+local function updateInput2(input)
+	local delta = input.Position - dragStart
+	local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+		startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+end
+
+frame.InputBegan:Connect(function(input)
+	if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+		dragToggle = true
+		dragStart = input.Position
+		startPos = frame.Position
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragToggle = false
+			end
+		end)
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+		if dragToggle then
+			updateInput2(input)
+		end
+	end
+end)
