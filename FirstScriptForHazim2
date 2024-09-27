@@ -232,10 +232,54 @@ Fly.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
 Fly.TextColor3 = Color3.new(0.00, 0.00, 0.00)
 Fly.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
 Fly.Text = "Fly"
-Fly.Position = UDim2.new(0.12, 0.00, 0.53, 0.00)
+Fly.Position = UDim2.new(0.12, 0.00, 0.54, 0.00)
 Fly.Parent = Frame
 Fly.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet('https://pastebin.com/raw/YSL3xKYU'))()
+end)
+
+
+
+
+
+local PlayMusic = Instance.new("TextButton")
+PlayMusic.Name = "PlayMusic"
+PlayMusic.TextWrapped = true
+PlayMusic.BorderSizePixel = 0
+PlayMusic.TextScaled = true
+PlayMusic.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+PlayMusic.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+PlayMusic.TextSize = 14
+PlayMusic.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+PlayMusic.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+PlayMusic.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+PlayMusic.Text = "Play Music"
+PlayMusic.Position = UDim2.new(0.54, 0.00, 0.54, 0.00)
+PlayMusic.Parent = Frame
+
+
+
+local TextBox_2 = Instance.new("TextBox")
+TextBox_2.TextWrapped = true
+TextBox_2.BorderSizePixel = 0
+TextBox_2.TextScaled = true
+TextBox_2.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
+TextBox_2.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TextBox_2.TextSize = 14
+TextBox_2.Size = UDim2.new(1.00, 0.00, 0.89, 0.00)
+TextBox_2.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+TextBox_2.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+TextBox_2.Text = ""
+TextBox_2.Position = UDim2.new(-0.00, 0.00, 1.17, 0.00)
+TextBox_2.Parent = PlayMusic
+PlayMusic.MouseButton1Click:Connect(function()
+	local x = Instance.new("Sound")
+	x.Parent = workspace
+	x.SoundId = "rbxassetid://"..TextBox_2.Text
+	x:Play()
+	x.Ended:Connect(function()
+		x:Destroy()
+	end)
 end)
 
 
