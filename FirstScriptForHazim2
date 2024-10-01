@@ -272,6 +272,7 @@ TextBox_2.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
 TextBox_2.Text = ""
 TextBox_2.Position = UDim2.new(-0.00, 0.00, 1.17, 0.00)
 TextBox_2.Parent = PlayMusic
+TextBox_2.PlaceholderText = "Enter your song id here"
 PlayMusic.MouseButton1Click:Connect(function()
 	local x = Instance.new("Sound")
 	x.Parent = workspace
