@@ -232,10 +232,30 @@ Fly.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
 Fly.TextColor3 = Color3.new(0.00, 0.00, 0.00)
 Fly.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
 Fly.Text = "Fly"
-Fly.Position = UDim2.new(0.12, 0.00, 0.54, 0.00)
+Fly.Position = UDim2.new(0.54, 0.00, 0.75, 0.00)
 Fly.Parent = Frame
 Fly.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet('https://pastebin.com/raw/YSL3xKYU'))()
+end)
+
+
+
+local TurnInvisible = Instance.new("TextButton")
+TurnInvisible.Name = "TurnInvisible"
+TurnInvisible.TextWrapped = true
+TurnInvisible.BorderSizePixel = 0
+TurnInvisible.TextScaled = true
+TurnInvisible.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+TurnInvisible.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TurnInvisible.TextSize = 14
+TurnInvisible.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+TurnInvisible.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+TurnInvisible.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+TurnInvisible.Text = "Turn Invisible"
+TurnInvisible.Position = UDim2.new(0.12, 0.00, 0.75, 0.00)
+TurnInvisible.Parent = Frame
+TurnInvisible.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))()
 end)
 
 
@@ -281,6 +301,45 @@ PlayMusic.MouseButton1Click:Connect(function()
 	x.Ended:Connect(function()
 		x:Destroy()
 	end)
+end)
+
+
+
+
+
+
+
+local TeleportToPlayer = Instance.new("TextButton")
+TeleportToPlayer.Name = "TeleportToPlayer"
+TeleportToPlayer.TextWrapped = true
+TeleportToPlayer.BorderSizePixel = 0
+TeleportToPlayer.TextScaled = true
+TeleportToPlayer.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+TeleportToPlayer.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TeleportToPlayer.TextSize = 14
+TeleportToPlayer.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+TeleportToPlayer.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+TeleportToPlayer.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+TeleportToPlayer.Text = "Teleport To Player"
+TeleportToPlayer.Position = UDim2.new(0.12, 0.00, 0.54, 0.00)
+TeleportToPlayer.Parent = Frame
+
+local TextBox_1 = Instance.new("TextBox")
+TextBox_1.TextWrapped = true
+TextBox_1.BorderSizePixel = 0
+TextBox_1.TextScaled = true
+TextBox_1.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
+TextBox_1.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TextBox_1.TextSize = 14
+TextBox_1.Size = UDim2.new(1.00, 0.00, 0.89, 0.00)
+TextBox_1.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+TextBox_1.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+TextBox_1.Text = ""
+TextBox_1.Position = UDim2.new(-0.00, 0.00, 1.17, 0.00)
+TextBox_1.Parent = TeleportToPlayer
+TextBox_1.PlaceholderText = "Enter the name of the player that you want to teleport to here"
+TeleportToPlayer.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(TextBox_1.Text).Character.HumanoidRootPart.CFrame
 end)
 
 
@@ -363,4 +422,3 @@ UIS.InputChanged:Connect(function(input)
 		end
 	end
 end)
-
